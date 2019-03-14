@@ -78,15 +78,21 @@ public class Main {
         box.delete(2);
         box.deleteLast();
         box.print();
+        System.out.println();
+        ((GiftBox) box).printSortedByPrice();
+        ((GiftBox) box).countChoco();
+
+
         ((GiftBox) box).printDollarPrice();
         ((GiftBox) box).printEuroPrice();
-        System.out.println("-----------------------------------------------------------------------------------------");
+        System.out.println("\nУменьшаем цену сладостей в коробке--------------------------------------------------------------------------------");
 
         box.fixPrice(800);
         box.print();
         ((GiftBox) box).printDollarPrice();
         ((GiftBox) box).printEuroPrice();
-        System.out.println("-----------------------------------------------------------------------------------------");
+
+        System.out.println("\nУменьшаем вес сладостей в коробке---------------------------------------------------------------------------------");
 
         box.reduceWeight(250);
         box.print();

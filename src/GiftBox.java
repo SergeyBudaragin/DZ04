@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -42,6 +43,27 @@ public class GiftBox implements Box, Policity {
         }
 
     }
+
+    /**
+     * Метод выводит текуций отсортированный состав коробки с подарками
+     */
+    public void printSortedByPrice() {
+        if (sweets.size() > 0) {
+            System.out.println("Состав нашего подарка:");
+            sweets.stream().sorted(Comparator.comparingDouble(o -> o.price)).forEach(System.out::println);
+            System.out.println("Общий вес подарка: " + weightNow() + " гр., общая цена подарка: " + priceNow() + " руб.");
+        } else {
+            System.out.println("Коробка пуста");
+        }
+
+    }
+
+    public void countChoco() {
+        long count = sweets.stream().filter(sweet -> sweet.title == "Шоколад").count();
+        System.out.println("Количество шоколадок : " + count);
+    }
+
+
     /**
      * Метод удаляет сладости конкретного типа
      *
@@ -73,7 +95,7 @@ public class GiftBox implements Box, Policity {
         if (predicate.test(sweet)) {
             sweets.add(sweet);
         } else {
-            System.out.println(sweet+ " - не удовлетворяет политике коробки!");
+            System.out.println(sweet + " - не удовлетворяет политике коробки!");
         }
     }
 
@@ -215,10 +237,11 @@ public class GiftBox implements Box, Policity {
         }
     }
 
- public void printEuroPrice(){
-     System.out.println("Цена в евро: " +convertFromRubToEuro.convert(priceNow()));
- }
-    public void printDollarPrice(){
+    public void printEuroPrice() {
+        System.out.println("Цена в евро: " + convertFromRubToEuro.convert(priceNow()));
+    }
+
+    public void printDollarPrice() {
         System.out.println("Цена в долларах: " + convertFromRubToDollar.convert(priceNow()));
     }
 }
