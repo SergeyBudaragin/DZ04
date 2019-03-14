@@ -57,7 +57,9 @@ public class GiftBox implements Box, Policity {
         }
 
     }
-
+    /**
+     * Метод выводит количество шоколадок в коробке
+     */
     public void countChoco() {
         long count = sweets.stream().filter(sweet -> sweet.title == "Шоколад").count();
         System.out.println("Количество шоколадок : " + count);
