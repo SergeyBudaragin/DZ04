@@ -9,6 +9,6 @@ public interface Box {
     public int findLowerPriceSweet();
     public int findLowerWeightSweet();
     public void reduceWeight(double limitWeight);
-//    public void deleteByType(Sweets sweets);
+    public void deleteByType(Sweets sweets);
 
 }

@@ -72,20 +72,20 @@ public class GiftBox implements Box, Policity {
      * @param sweets - тип сладости для удаления
      */
 
-//    @Override
-//    public void deleteByType(Sweets sweets) {
-//        if (this.sweets.size() == 0) {
-//            System.out.println("Коробка пуста");
-//        } else {
-//            for (int i = 0; i < this.sweets.size(); i++) {
-//                if (this.sweets[i].title == sweets.title) {
-//                    delete(i);
-//                    i--;
-//                }
-//            }
-//        }
-//
-//    }
+    @Override
+    public void deleteByType(Sweets sweet) {
+        if (sweets.size() == 0) {
+            System.out.println("Коробка пуста");
+        } else {
+            for (int i = 0; i < sweets.size()-1; i++) {
+                if (sweets.get(i).title == sweet.title) {
+                    sweets.remove(i);
+                    i--;
+                }
+            }
+        }
+
+    }
 
     /**
      * Метод добавляет сладость в коробку

@@ -99,9 +99,10 @@ public class Main {
         ((GiftBox) box).printDollarPrice();
         ((GiftBox) box).printEuroPrice();
         System.out.println();
+        box.deleteByType(new Chocolate(false));
+        box.print();
         System.out.println("Коробка 2-----------------------------------------------------------------------------------------");
-//        box.deleteByType(new Chocolate(false));
-//        box.print();
+
 
         // Коробка 2
         Box box2 = new GiftBox();
