@@ -57,6 +57,7 @@ public class GiftBox implements Box, Policity {
         }
 
     }
+
     /**
      * Метод выводит количество шоколадок в коробке
      */
@@ -69,7 +70,7 @@ public class GiftBox implements Box, Policity {
     /**
      * Метод удаляет сладости конкретного типа
      *
-     * @param sweets - тип сладости для удаления
+     * @param sweet - тип сладости для удаления
      */
 
     @Override
@@ -77,7 +78,7 @@ public class GiftBox implements Box, Policity {
         if (sweets.size() == 0) {
             System.out.println("Коробка пуста");
         } else {
-            for (int i = 0; i < sweets.size()-1; i++) {
+            for (int i = 0; i < sweets.size() - 1; i++) {
                 if (sweets.get(i).title == sweet.title) {
                     sweets.remove(i);
                     i--;
