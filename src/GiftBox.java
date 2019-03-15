@@ -78,7 +78,7 @@ public class GiftBox implements Box, Policity {
         if (sweets.size() == 0) {
             System.out.println("Коробка пуста");
         } else {
-            for (int i = 0; i < sweets.size() - 1; i++) {
+            for (int i = 0; i < sweets.size(); i++) {
                 if (sweets.get(i).title == sweet.title) {
                     sweets.remove(i);
                     i--;
@@ -162,7 +162,7 @@ public class GiftBox implements Box, Policity {
     public int findLowerPriceSweet() {
         int numberOfLowerPriceSweet = 0;
         if (sweets.size() > 0) {
-            for (int i = 0; i < sweets.size() - 1; i++) {
+            for (int i = 0; i < sweets.size() ; i++) {
                 if (sweets.get(i).price < sweets.get(numberOfLowerPriceSweet).price) {
                     numberOfLowerPriceSweet = i;
                 }
@@ -182,7 +182,7 @@ public class GiftBox implements Box, Policity {
     public int findLowerWeightSweet() {
         int numberOfLowerWeightSweetSweet = 0;
         if (sweets.size() > 0) {
-            for (int i = 0; i < sweets.size() - 1; i++) {
+            for (int i = 0; i < sweets.size() ; i++) {
                 if (sweets.get(i).weight < sweets.get(numberOfLowerWeightSweetSweet).weight) {
                     numberOfLowerWeightSweetSweet = i;
                 }
@@ -205,7 +205,8 @@ public class GiftBox implements Box, Policity {
             System.out.println("Желаемая вес не корректен");
         } else if (limitWeight < weightNow() && sweets.size() > 0) {
             do {
-                delete(findLowerWeightSweet());
+                int j=(findLowerWeightSweet());
+            delete(findLowerWeightSweet());
             } while (weightNow() > limitWeight);
         }
 

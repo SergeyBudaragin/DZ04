@@ -94,7 +94,7 @@ public class Main {
 
         System.out.println("\nУменьшаем вес сладостей в коробке---------------------------------------------------------------------------------");
 
-        box.reduceWeight(250);
+        box.reduceWeight(450);
         box.print();
         ((GiftBox) box).printDollarPrice();
         ((GiftBox) box).printEuroPrice();
